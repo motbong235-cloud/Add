@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    # Userbot Configuration (Telethon)
+    # Userbot Configuration
     API_ID = int(os.getenv('API_ID', '0'))
     API_HASH = os.getenv('API_HASH', '')
     PHONE_NUMBER = os.getenv('PHONE_NUMBER', '')
@@ -18,6 +18,9 @@ class Config:
     PORT = int(os.getenv('PORT', 8080))
     ADMIN_USERNAME = os.getenv('ADMIN_USERNAME', 'admin')
     ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'admin123')
+    
+    # Database (SQLite - មិនត្រូវការ Service ដាច់ដោយឡែក)
+    DATABASE_PATH = os.getenv('DATABASE_PATH', 'telegram_bot.db')
     
     @classmethod
     def validate(cls):
